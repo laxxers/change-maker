@@ -1,0 +1,24 @@
+<% provide(:title, 'Currency Denominations') %>
+<h1>Currency Denominations</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <table class="table table-bordered">
+      <tr>
+        <th>Denomination</th>
+        <th>Value</th>
+        <th>Actions</th>
+      </tr>
+      <% @denominations.each do |denomination| %>
+      <tr>
+        <td><%= denomination.name %></td>
+        <td><%= number_to_currency denomination.value %></td>
+        <td><%= link_to "Edit", edit_denomination_path(denomination) %> | 
+            <%= link_to "Delete", denomination, method: :delete,
+                                  data: { confirm: "You sure?" } %></td>
+      </tr>
+      <% end %>
+    </table>
+    <%= button_to "Add", new_denomination_path, :class => "btn btn-primary", :method => :get %>
+  </div>
+</div>

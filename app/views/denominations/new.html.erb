@@ -1,0 +1,18 @@
+<% provide(:title, 'Add') %>
+<h1>Add Denomination</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@denomination) do |f| %>
+      <%= render 'shared/error_messages' %>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+    
+      <%= f.label :value %>
+      <%= f.number_field :value, class: 'form-control', :step => 0.01 %>
+    
+    
+      <%= f.submit "Add", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
