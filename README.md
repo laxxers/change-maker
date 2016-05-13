@@ -1,2 +1,2 @@
-# change-maker
+# Change Maker
 A simple currency denomination converter
