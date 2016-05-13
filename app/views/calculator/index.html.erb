@@ -1,13 +1,17 @@
 <% provide(:title, 'Index') %>
 <h1>Change Maker</h1>
-<p>A simple currency denomination calculator</p>
+<p class="text-center">A simple currency denomination calculator</p>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_tag("", method: "get") do %>
-      <%= label_tag(:amount, "Amount:") %>
-      <%= number_field_tag :amount, "", class: 'form-control', :step => 0.01 %>
-
+      <div class="form-group">
+        <%= label_tag(:amount, "Amount:") %>
+        <div class="input-group">
+          <div class="input-group-addon">$</div>
+            <%= number_field_tag :amount, "", class: 'form-control', :step => 0.01 %>
+        </div>
+      </div>
       <%= submit_tag "Convert", class: 'btn btn-primary' %>
     <% end %>
     
